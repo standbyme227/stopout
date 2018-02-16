@@ -3,10 +3,14 @@ import re, os, errno
 import requests
 from bs4 import BeautifulSoup
 
+
 PATH_MODULE = os.path.abspath(__name__)  # __name__ 모듈이라는 파일이 있는 위치를 뽑아내기위한 abspath
 ROOT_DIR = os.path.dirname(PATH_MODULE)
 PATH_DATA_DIR = os.path.join(ROOT_DIR, 'data')
 os.makedirs(PATH_DATA_DIR, exist_ok=True)
+
+
+
 
 
 class Webtoon(models.Model):

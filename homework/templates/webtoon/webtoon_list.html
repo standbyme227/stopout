@@ -5,7 +5,8 @@
 
 <ul>
     {% for webtoon in webtoons %}
-    <h2><a href="{% url 'episode-list' %}">{{ webtoon.title }} : {{ webtoon.webtoon_id }}</a></h2>
+    <h1><a href="{% url 'episode-list' %}">제목: {{ webtoon.title }}</a></h1>
+    <h2> 아이디 코드: {{ webtoon.webtoon_id }}</h2>
     {% endfor %}
 </ul>
 

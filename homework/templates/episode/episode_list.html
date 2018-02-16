@@ -5,10 +5,20 @@
 
 <ul>
     {% for episode in episodes %}
-    <a href="{% url 'episode-detail' pk=episode.pk %}">
-        <li>{{ episode.webtoon.title }} - {{ episode.episode_title }}</li>
-    </a>
+
+        <li>{{ episode.webtoon.title }} -
+            <a href="{% url 'episode-detail' pk=episode.pk %}">{{ episode.episode_title }}</a>
+        </li>
+
     {% endfor %}
+
+
 </ul>
 
+    <div class="btn-container">
+        <form action="{% url 'webtoon-list'%}" method="get" class="inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">돌아가기</button>
+        </form>
+    </div>
 {% endblock %}
