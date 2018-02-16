@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<ul>
+    {% for episode in episodes %}
+    <a href="{% url 'episode-detail' pk=episode.pk %}">
+        <li>{{ episode.webtoon.title }} - {{ episode.episode_title }}</li>
+    </a>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h2>{{ episodes.webtoon.title }}</h2>
+    <ul>
+        <li>{{ episodes.episode_title }}</li>
+        <li>
+            <b>등록일 : </b>{{ episodes.episode_date }}
+        </li>
+        <li>
+            <b>Img_url : </b>{{ episodes.episode_img_url }}
+        </li>
+        <li>
+            <b>Episode Id : </b>{{ episodes.episode_id }}
+        </li>
+
+    </ul>
+
+    <div class="btn-container">
+        <form action="{% url 'webtoon-list'%}" method="get" class="inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">돌아가기</button>
+        </form>
+    </div>
+{% endblock %}
